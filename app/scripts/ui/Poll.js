@@ -3,7 +3,9 @@
 var Poll = React.createClass({
   render: function() {
     return (
-      <h1>item</h1>
+      <h1>
+        {this.props.object.question_string}
+      </h1>
     );
   }
 });
