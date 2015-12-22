@@ -17,8 +17,8 @@ var Feed = React.createClass({
         poll2: {
           question_string: "Hello?",
           options: {
-            yes: {count:123},
-            no: {count:321}
+            yes: {count:9001},
+            no: {count:-123}
           }
         }
       }
@@ -29,7 +29,7 @@ var Feed = React.createClass({
     var createPoll = function(pollObject, i) {
       return <li key={i}><Poll data={pollObject}/></li>;
     };
-    return <ul>{_.map(this.state.polls, function(value, key) {return createPoll(value, key)})}</ul>;
+    return <ol>{_.map(this.state.polls, function(value, key) {return createPoll(value, key)})}</ol>;
   }
 });
 

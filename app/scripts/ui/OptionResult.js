@@ -3,7 +3,9 @@
 var OptionResult = React.createClass({
   render: function() {
     return (
-      <p>{this.props.data.count}</p>
+      <span>
+        {this.props.option}:{this.props.data.count}
+      </span>
     );
   }
 });
