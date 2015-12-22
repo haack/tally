@@ -5,22 +5,22 @@ var _ = require('lodash');
 var Feed = React.createClass({
   getInitialState: function() {
     return {
-      polls: [
-        {
+      polls: {
+        poll1: {
           question_string: "Wagwan?",
           options: {
             yes: {count:123},
             no: {count:321}
           }
         },
-        {
+        poll2: {
           question_string: "Hello?",
           options: {
             yes: {count:123},
             no: {count:321}
           }
         }
-      ]
+      }
     };
   },
 
