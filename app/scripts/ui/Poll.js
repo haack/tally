@@ -1,14 +1,14 @@
 'use strict';
 
 var _ = require("lodash"),
-  OptionResult = require("./OptionResult");
+  AnswerOptions = require("./AnswerOptions");
 
 var Poll = React.createClass({
   render: function() {
     return (
       <span>
         <h3>{this.props.data.question_string}</h3>
-        {_.map(this.props.data.options, function(value, key) {return <OptionResult key={key} option={key} data={value}/>;})}
+        <AnswerOptions options={this.props.data.options}/>
       </span>
     );
   }

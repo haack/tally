@@ -6,10 +6,9 @@ var _ = require("lodash"),
 var Poll = React.createClass({
   render: function() {
     return (
-      <span>
-        <h3>{this.props.data.question_string}</h3>
-        {_.map(this.props.data.options, function(value, key) {return <OptionResult key={key} option={key} data={value}/>;})}
-      </span>
+      <ul>
+        {_.map(this.props.options, function(value, key) {return <li key={key}><OptionResult option={key} data={value}/></li>;})}
+      </ul>
     );
   }
 });
