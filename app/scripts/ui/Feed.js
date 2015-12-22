@@ -27,7 +27,7 @@ var Feed = React.createClass({
 
   render: function() {
     var createPoll = function(pollObject, i) {
-      return <li key={i}><Poll object={pollObject}/></li>;
+      return <li key={i}><Poll data={pollObject}/></li>;
     };
     return <ul>{_.map(this.state.polls, function(value, key) {return createPoll(value, key)})}</ul>;
   }
