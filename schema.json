@@ -12,6 +12,7 @@
       },
       "freshness": 12341234, //denormalised way of tracking hot content
       "type": "yesno",
+      "multi_answer": true, //can multiple answers be selected
       "response_count": 2, //denormalised count of total responses
       "options": {
         "yes": { //option value

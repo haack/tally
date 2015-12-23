@@ -3,6 +3,8 @@
 var _ = require('lodash'),
   Poll = require('./Poll');
 
+var firebaseRef = new Firebase("https://rapidly.firebaseio.com/polls");
+
 var Feed = React.createClass({
   getInitialState: function() {
     return {
@@ -12,8 +14,7 @@ var Feed = React.createClass({
   },
 
   componentWillMount: function() {
-    this.firebaseRef = new Firebase("https://rapidly.firebaseio.com/polls");
-      this.firebaseRef.on("value", function(dataSnapshot) {
+      firebaseRef.on("value", function(dataSnapshot) {
         this.setState({
           list: dataSnapshot.val().list,
           count: dataSnapshot.val().count
@@ -23,7 +24,7 @@ var Feed = React.createClass({
 
   render: function() {
     var createPoll = function(pollObject, i) {
-      return <li key={i}><Poll data={pollObject}/></li>;
+      return <li key={i}><Poll data={pollObject} pollRef={firebaseRef.child("list/"+i)} /></li>;
     };
     if (this.state.count > 0) {
       return <ol>{_.map(this.state.list, function(value, key) {return createPoll(value, key)})}</ol>;
