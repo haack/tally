@@ -3,7 +3,7 @@
 var _ = require("lodash"),
   OptionResult = require("./OptionResult");
 
-var Poll = React.createClass({
+var AnswerOptions = React.createClass({
   render: function() {
     return (
       <ul>
@@ -13,4 +13,4 @@ var Poll = React.createClass({
   }
 });
 
-module.exports = Poll;
+module.exports = AnswerOptions;

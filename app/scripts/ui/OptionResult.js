@@ -5,13 +5,13 @@ var OptionResult = React.createClass({
     return (
       <span>
         {this.props.option}: {this.props.data.count}
-        <button onClick={this.alertTest}>Hello</button>
+        <a onClick={this.alertTest}>+</a>
       </span>
     );
   },
 
   alertTest: function() {
-    console.log("hello");
+    console.log("+");
   }
 });
 
