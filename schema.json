@@ -1,0 +1,59 @@
+"polls": {
+  "count": 123, //denormalised count of polls
+  "list": {
+    "{poll_id}": { //firebase generated unique id
+      "question": "Is Alex awesome?",
+      "created_at": 123698713246, //UTC ms (Date.now())
+      "created_by": "{uid}", //fb id of user
+      "location": {
+        "longitude": 123,
+        "latitude": 321,
+        "city": "San Francisco"
+      },
+      "freshness": 12341234, //denormalised way of tracking hot content
+      "type": "yesno",
+      "response_count": 2, //denormalised count of total responses
+      "options": {
+        "yes": { //option value
+          "count": 2, //denormalised count of votes for that option
+          "votes": {
+            "{uid}": {
+              "timestamp": 1234123, //UTC ms of vote time
+              "location": {} //see location object above, probably not needed
+            },
+            "..."
+          }
+        },
+        "no": {
+          "count": 0
+        }
+      },
+      "open": true //should we allow polls to be closed?
+    },
+    "..."
+  }
+}
+
+//freshness could be a value which is compared with Date.now()
+//which is increased with each vote and gives indication
+//of how fresh a poll is
+//can subsequently be used to order polls in terms of freshness
+
+"users": {
+  "{uid}": { //fb id
+    "created_at": 12341234, //UTC ms
+    "fb_name": "Alex Haak",
+    "fb_data_cache": {}, //routinely (monthly?) store user's fb data (friends, interests) in case permissions are ever revoked, or fb restricts access (possibly not allowed)
+    "last_location": {},
+    "home_location": {},
+    "modal_city": {}, 
+    "last_logging_in": 1234123423, //UTC ms
+    "polls_voted": {
+      "{poll_id}": "{option_value}",
+      "..."
+    },
+    "polls_created": {
+      "{poll_id}": "{created_at}", //denormalised with date to help throttle poll creation
+    }
+  }
+}
