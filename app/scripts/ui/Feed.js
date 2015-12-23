@@ -4,22 +4,19 @@ var _ = require('lodash'),
   Poll = require('./Poll');
 
 var Feed = React.createClass({
-  polls: {},
-
   getInitialState: function() {
     return {
-      polls: {},
+      list: {},
       count: 0
     };
   },
 
   componentWillMount: function() {
     this.firebaseRef = new Firebase("https://rapidly.firebaseio.com/polls");
-      this.firebaseRef.on("child_added", function(dataSnapshot) {
-        this.polls[dataSnapshot.key()] = dataSnapshot.val();
+      this.firebaseRef.on("value", function(dataSnapshot) {
         this.setState({
-          polls: this.polls,
-          count: this.state.count+1
+          list: dataSnapshot.val().list,
+          count: dataSnapshot.val().count
         });
       }.bind(this));
   },
@@ -29,7 +26,7 @@ var Feed = React.createClass({
       return <li key={i}><Poll data={pollObject}/></li>;
     };
     if (this.state.count > 0) {
-      return <ol>{_.map(this.state.polls, function(value, key) {return createPoll(value, key)})}</ol>;
+      return <ol>{_.map(this.state.list, function(value, key) {return createPoll(value, key)})}</ol>;
     } else {
       return <span>Loading polls...</span>
     }
