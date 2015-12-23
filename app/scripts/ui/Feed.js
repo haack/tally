@@ -8,7 +8,8 @@ var Feed = React.createClass({
 
   getInitialState: function() {
     return {
-      polls: {}
+      polls: {},
+      count: 0
     };
   },
 
@@ -17,7 +18,8 @@ var Feed = React.createClass({
       this.firebaseRef.on("child_added", function(dataSnapshot) {
         this.polls[dataSnapshot.key()] = dataSnapshot.val();
         this.setState({
-          polls: this.polls
+          polls: this.polls,
+          count: this.state.count+1
         });
       }.bind(this));
   },
@@ -26,7 +28,11 @@ var Feed = React.createClass({
     var createPoll = function(pollObject, i) {
       return <li key={i}><Poll data={pollObject}/></li>;
     };
-    return <ol>{_.map(this.state.polls, function(value, key) {return createPoll(value, key)})}</ol>;
+    if (this.state.count > 0) {
+      return <ol>{_.map(this.state.polls, function(value, key) {return createPoll(value, key)})}</ol>;
+    } else {
+      return <span>Loading polls...</span>
+    }
   }
 });
 
