@@ -5,7 +5,7 @@ var OptionResult = React.createClass({
     return (
       <span>
         {this.props.option}: {this.props.data.count}
-        <a onClick={this.props.vote}>+</a>
+        <button onClick={this.props.vote}>+</button>
       </span>
     );
   },
