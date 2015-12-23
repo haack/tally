@@ -4,25 +4,22 @@ var _ = require('lodash'),
   Poll = require('./Poll');
 
 var Feed = React.createClass({
+  polls: {},
+
   getInitialState: function() {
     return {
-      polls: {
-        poll1: {
-          question_string: "Wagwan?",
-          options: {
-            yes: {count:123},
-            no: {count:321}
-          }
-        },
-        poll2: {
-          question_string: "Fave person?",
-          options: {
-            Alex: {count:9001},
-            Jekabs: {count:-123}
-          }
-        }
-      }
+      polls: {}
     };
+  },
+
+  componentWillMount: function() {
+    this.firebaseRef = new Firebase("https://rapidly.firebaseio.com/polls");
+      this.firebaseRef.on("child_added", function(dataSnapshot) {
+        this.polls[dataSnapshot.key()] = dataSnapshot.val();
+        this.setState({
+          polls: this.polls
+        });
+      }.bind(this));
   },
 
   render: function() {
