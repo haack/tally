@@ -15,10 +15,10 @@ var Feed = React.createClass({
           }
         },
         poll2: {
-          question_string: "Hello?",
+          question_string: "Fave person?",
           options: {
-            yes: {count:9001},
-            no: {count:-123}
+            Alex: {count:9001},
+            Jekabs: {count:-123}
           }
         }
       }
