@@ -5,14 +5,10 @@ var OptionResult = React.createClass({
     return (
       <span>
         {this.props.option}: {this.props.data.count}
-        <a onClick={this.alertTest}>+</a>
+        <a onClick={this.props.vote}>+</a>
       </span>
     );
   },
-
-  alertTest: function() {
-    console.log("+");
-  }
 });
 
 module.exports = OptionResult;
