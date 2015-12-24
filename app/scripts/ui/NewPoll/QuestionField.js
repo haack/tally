@@ -1,6 +1,6 @@
 'use strict';
 
-var Example = React.createClass({
+var QuestionField = React.createClass({
   getInitialState: function() {
     return {
       question: ""
@@ -19,12 +19,12 @@ var Example = React.createClass({
   render: function() {
     return (
       <div>
-        <input type="text" onChange={this.handleQuestionChange}/>
         <button onClick={this.props.prevStep}>Prev</button>
+        <input type="text" placeholder="What do you want to ask?" defaultValue={this.props.formData.question} onChange={this.handleQuestionChange}/>
         <button onClick={this.props.nextStep}>Next</button>
       </div>
     );
   },
 });
 
-module.exports = Example;
+module.exports = QuestionField;

@@ -3,6 +3,7 @@
 //inspired by: https://viget.com/extend/building-a-multi-step-registration-form-with-react
 
 var QuestionField = require('./QuestionField'),
+  OptionsField = require('./OptionsField'),
   PollAdded = require('./PollAdded');
 
 var NewPoll = React.createClass({
@@ -38,9 +39,11 @@ var NewPoll = React.createClass({
   render: function() {
     switch (this.state.step) {
       case 1: 
-        return <QuestionField nextStep={this.nextStep} prevStep={this.prevStep} saveValues={this.saveValues}/>
+        return <QuestionField formData={this.state.formData} nextStep={this.nextStep} prevStep={this.prevStep} saveValues={this.saveValues}/>
+      case 2: 
+        return <OptionsField formData={this.state.formData} nextStep={this.nextStep} prevStep={this.prevStep} saveValues={this.saveValues}/>
       default:
-        return <PollAdded data={this.state.formData} />
+        return <PollAdded formData={this.state.formData} />
     }
   }
 });
