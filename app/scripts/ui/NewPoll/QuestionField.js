@@ -1,18 +1,8 @@
 'use strict';
 
 var QuestionField = React.createClass({
-  getInitialState: function() {
-    return {
-      question: ""
-    };
-  },
-
   //TODO: get some flux in here
   handleQuestionChange: function(event) {
-    this.setState({
-      question: event.target.value
-    });
-
     this.props.saveValues({question: event.target.value});
   },
 

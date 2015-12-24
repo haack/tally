@@ -1,12 +1,6 @@
 'use strict';
 
 var OptionsField = React.createClass({
-  getInitialState: function() {
-    return {
-      options: {}
-    };
-  },
-
   handleOptionAdd: function(event) {
 
   },
