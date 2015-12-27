@@ -17,3 +17,19 @@ $ gulp watch
 ```
 $ gulp
 ```
+
+# todo
+
+1. Basic component styling
+
+1. Poll post to firebase
+1. Poll post throttling
+1. Poll option add/remove
+
+1. Add FB auth id to vote
+1. Firbase auth validation
+
+1. HTML5 location API integration
+
+1. Feed ordering
+1. Pagination
