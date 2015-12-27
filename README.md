@@ -24,7 +24,8 @@ $ gulp
 
 1. Poll post throttling
 
-1. Poll add validation
+1. Poll add client validation
+1. Poll add firebase rules
 
 1. Add FB auth id to vote
 1. Firbase auth validation
