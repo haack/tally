@@ -22,7 +22,6 @@ $ gulp
 
 1. Basic component styling
 
-1. Poll post to firebase
 1. Poll post throttling
 
 1. Poll add validation
