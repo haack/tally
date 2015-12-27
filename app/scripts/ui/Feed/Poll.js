@@ -55,7 +55,7 @@ var Poll = React.createClass({
   render: function() {
     return (
       <span>
-        <h3>{this.props.data.question_string} ({this.state.totalVotes} votes)</h3>
+        <h3>{this.props.data.question} ({this.state.totalVotes} votes)</h3>
         <AnswerOptions vote={this.vote} options={this.props.data.options}/>
       </span>
     );
