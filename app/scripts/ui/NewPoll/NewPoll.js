@@ -10,7 +10,12 @@ var NewPoll = React.createClass({
   getInitialState: function() {
     return {
       step: 1,
-      formData: {}
+      formData: {
+        options: {
+          "yes": "yes",
+          "no": "no"
+        }
+      }
     };
   },
 

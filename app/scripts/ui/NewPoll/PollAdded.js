@@ -3,7 +3,7 @@
 var PollAdded = React.createClass({
   render: function() {
     return (
-      <div>Donso! {this.props.formData.question} </div>
+      <div>Donso! {JSON.stringify(this.props.formData)}  </div>
     );
   },
 });
