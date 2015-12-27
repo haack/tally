@@ -24,7 +24,8 @@ $ gulp
 
 1. Poll post to firebase
 1. Poll post throttling
-1. Poll option add/remove
+
+1. Poll add validation
 
 1. Add FB auth id to vote
 1. Firbase auth validation

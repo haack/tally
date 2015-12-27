@@ -1,6 +1,8 @@
 'use strict';
 
 var QuestionField = React.createClass({
+  //TODO: add wrapper for nextStep to validate question value
+
   //TODO: get some flux in here
   handleQuestionChange: function(event) {
     this.props.saveValues({question: event.target.value});
