@@ -20,6 +20,8 @@ $ gulp
 
 # Todo
 
+1. Finalise app structure (routes)
+
 1. Basic component styling
 
 1. Poll post throttling
