@@ -26,7 +26,6 @@ $ gulp
 
 1. Poll post throttling
 
-1. Add react router
 1. Basic dashboard
 1. Login page
 
