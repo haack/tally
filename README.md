@@ -1,4 +1,4 @@
-# destructions
+# Destructions
 
 ## 1. Install
 
@@ -8,21 +8,25 @@ $ npm install
 
 ## 2. Run
 
-###Build and watch with browsersync
+### Build and watch with browsersync
 ```
 $ gulp watch 
 ```
 
-###Deploy stuff
+### Deploy stuff
 ```
 $ gulp
 ```
 
-# todo
+# Todo
 
 1. Basic component styling
 
 1. Poll post throttling
+
+1. Add react router
+1. Basic dashboard
+1. Login page
 
 1. Poll add client validation
 1. Poll add firebase rules
