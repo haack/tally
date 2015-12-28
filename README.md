@@ -39,3 +39,7 @@ $ gulp
 
 1. Feed ordering
 1. Pagination
+
+# Issues
+
+1. "Can only update a mounted or mounting component" on redirect if not logged in
