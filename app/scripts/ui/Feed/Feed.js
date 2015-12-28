@@ -27,7 +27,7 @@ var Feed = React.createClass({
       return <li key={i}><Poll data={pollObject} pollRef={firebaseRef.child("list/"+i)} /></li>;
     };
     if (this.state.count > 0) {
-      return <ol>{_.map(this.state.list, function(value, key) {return createPoll(value, key)})}</ol>;
+      return <ol>Poll count: {this.state.count} {_.map(this.state.list, function(value, key) {return createPoll(value, key)})}</ol>;
     } else {
       return <span>Loading polls...</span>
     }
