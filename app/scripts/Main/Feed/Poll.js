@@ -54,10 +54,11 @@ var Poll = React.createClass({
 
   render: function() {
     return (
-      <span>
-        <h3>{this.props.data.question} ({this.state.totalVotes} votes)</h3>
+      <div className="poll">
+        <span className="question">{this.props.data.question}</span> 
+        <span className="votes pull-right">{this.state.totalVotes}</span>
         <AnswerOptions vote={this.vote} options={this.props.data.options}/>
-      </span>
+      </div>
     );
   }
 });

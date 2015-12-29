@@ -6,13 +6,15 @@ var _ = require("lodash"),
 var AnswerOptions = React.createClass({
   render: function() {
     return (
-      <ul>
-        {
-          _.map(this.props.options, function(value, key) {
-            return <li key={key}><OptionResult vote={this.props.vote.bind(null,key)} option={key} data={value}/></li>;
-          }.bind(this))
-        }
-      </ul>
+      <div className="answer-options">
+        <ul>
+          {
+            _.map(this.props.options, function(value, key) {
+              return <OptionResult key={key} vote={this.props.vote.bind(null,key)} option={key} data={value}/>;
+            }.bind(this))
+          }
+        </ul>
+      </div>
     );
   }
 });

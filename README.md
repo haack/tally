@@ -22,6 +22,8 @@ $ gulp
 
 1. Version API
 
+1. Poll loading gif
+
 1. Cleaner login checks for each page (wrap componentWillMountCheck into function?)
 
 1. Finalise app structure (routes)

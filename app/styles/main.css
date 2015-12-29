@@ -3,7 +3,55 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+.navbar {
+  margin-bottom: 0;
+}
+
 .login {
   font-size: 3em;
   font-weight: 300;
+}
+
+.content {
+  padding: 0px;
+}
+
+.poll {
+  padding: 20px 20px;
+  border-bottom: 1px #aaa solid;
+}
+
+.poll .question {
+  padding-top: 3px;
+  font-size: 1.6em;
+}
+
+.poll .votes {
+  font-size: 2em;
+  font-weight: 300;
+  color: #aaa;
+}
+
+.answer-options {
+  margin-top: 5px;
+}
+
+.answer-options ul {
+  display: inline;
+  list-style: none; 
+  margin-bottom: 0;
+  padding-left: 0px;
+  height: 100%;
+}
+
+.option-result {
+  display: inline-block;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px #aaa solid;
+  height: 100%;
+}
+
+.option-result a {
+  height: 100%;
 }
