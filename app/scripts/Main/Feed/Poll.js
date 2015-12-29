@@ -24,6 +24,14 @@ var Poll = React.createClass({
         return count+1;
       }
     });
+
+    pollRef.parent().parent().child("count").transaction(function(count) {
+      if (!count) {
+        return 1;
+      } else {
+        return count+1;
+      }
+    });
   },
 
   getInitialState: function() {
