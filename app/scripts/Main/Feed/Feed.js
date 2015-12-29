@@ -1,7 +1,8 @@
 'use strict';
 
 var _ = require('lodash'),
-  Poll = require('./Poll');
+  Poll = require('./Poll'),
+  Loading = require('./Loading');
 
 var firebaseRef = new Firebase("https://rapidly.firebaseio.com/polls");
 
@@ -29,7 +30,7 @@ var Feed = React.createClass({
     if (this.state.count > 0) {
       return <div>{_.map(this.state.list, function(value, key) {return createPoll(value, key)})} Poll count: {this.state.count}</div>;
     } else {
-      return <span>Loading polls...</span>
+      return <Loading />
     }
   },
 

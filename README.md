@@ -24,11 +24,11 @@ $ gulp
 
 1. Poll loading gif
 
+1. Show poll results
+
 1. Cleaner login checks for each page (wrap componentWillMountCheck into function?)
 
 1. Finalise app structure (routes)
-
-1. Basic component styling
 
 1. Poll post throttling
 

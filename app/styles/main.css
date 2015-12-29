@@ -16,6 +16,10 @@ body {
   padding: 0px;
 }
 
+.loading {
+  margin-top: 70px;
+}
+
 .poll {
   padding: 20px 20px;
   border-bottom: 1px #aaa solid;
