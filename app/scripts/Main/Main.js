@@ -8,7 +8,7 @@ var Main = React.createClass({
 
   //TODO: still tries to render component later raising a warning
   componentDidMount: function() {
-    if (!Auth.isLoggedIn()) {
+    if (!Auth.getAuth()) {
       this.history.pushState(null, '/login');
     }
   },

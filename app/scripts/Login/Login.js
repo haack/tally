@@ -1,12 +1,20 @@
 'use strict';
 
+var History = require("react-router").History;
+
 var Login = React.createClass({
+  mixins: [History],
+
   login: function() {
-    var ref = new Firebase("https://rapidly.firebaseio.com");
-    ref.authWithOAuthPopup("facebook", function(error, authData) { /* Your Code */ }, {
-      remember: "sessionOnly",
-      scope: "email,user_likes"
+    Auth.login(function(err, auth) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("Success: " + auth);
+      }
     });
+
+    this.history.pushState(null, '/main');
   },
 
   render: function() {
