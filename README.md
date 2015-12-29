@@ -38,6 +38,8 @@ $ gulp
 1. Write register function for user
 1. Update user's last logged in on login
 
+1. Disable/enable certain header tabs if not logged in/out
+
 1. HTML5 location API integration
 
 1. Feed ordering

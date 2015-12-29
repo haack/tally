@@ -1,5 +1,5 @@
 var ReactRouter = require("react-router"),
-    Frame = require("./Frame"),
+    Frame = require("./Frame/Frame"),
     Login = require("./Login/Login"),
     Logout = require("./Logout/Logout"),
     Main = require("./Main/Main"),
