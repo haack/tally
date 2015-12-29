@@ -1,4 +1,5 @@
-# Destructions
+# React-sandbox
+Single page polling app, using React.js and Firebase
 
 ## 1. Install
 

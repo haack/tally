@@ -31,9 +31,9 @@ body {
 }
 
 .poll .votes {
-  font-size: 2em;
+  font-size: 3em;
   font-weight: 300;
-  color: #aaa;
+  color: #337ab7;
 }
 
 .answer-options {
