@@ -1,3 +1,9 @@
 body {
   margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.login {
+  font-size: 3em;
+  font-weight: 300;
 }

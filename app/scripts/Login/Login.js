@@ -24,9 +24,12 @@ var Login = React.createClass({
 
   render: function() {
     return (
-      <div>
-        Login page
-        <button onClick={this.login}>FB</button>
+      <div className="login text-center">
+        
+        <span>Welcome</span><br/>
+        <a className="btn btn-social btn-lg btn-facebook" onClick={this.login}>
+          <span className="fa fa-facebook"></span>Sign in
+        </a>
       </div>
     );
   },

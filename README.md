@@ -48,3 +48,4 @@ $ gulp
 # Issues
 
 1. Firebase feed ref being readded each time component is mounted
+1. Bootstrap css and js not being imported properly (see yo generator)
