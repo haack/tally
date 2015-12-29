@@ -15,10 +15,18 @@ var Feed = React.createClass({
   },
 
   componentWillMount: function() {
-    firebaseRef.on("value", function(dataSnapshot) {
+    // firebaseRef.on("value", function(dataSnapshot) {
+    //   this.setState({
+    //     list: dataSnapshot.val().list,
+    //     count: dataSnapshot.val().count
+    //   });
+    // }.bind(this));
+
+    firebaseRef.child("list").orderByChild("votes").on("child_added", function(snapshot) {
+      console.log(snapshot.key() + " was " + snapshot.val().votes + " meters tall");
       this.setState({
-        list: dataSnapshot.val().list,
-        count: dataSnapshot.val().count
+        list: _.assign(this.state.list, {[snapshot.key()]: snapshot.val()}),
+        count: this.state.count+1
       });
     }.bind(this));
   },

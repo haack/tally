@@ -25,7 +25,7 @@ var Poll = React.createClass({
       }
     });
 
-    pollRef.parent().parent().child("count").transaction(function(count) {
+    pollRef.parent().parent().child("votes").transaction(function(count) {
       if (!count) {
         return 1;
       } else {
@@ -64,7 +64,7 @@ var Poll = React.createClass({
     return (
       <div className="poll">
         <span className="question">{this.props.data.question}</span> 
-        <span className="votes pull-right">{this.state.totalVotes}</span>
+        <span className="votes pull-right">{this.props.data.votes}</span>
         <AnswerOptions vote={this.vote} options={this.props.data.options}/>
       </div>
     );
