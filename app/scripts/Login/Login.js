@@ -16,7 +16,6 @@ var Login = React.createClass({
       if (err) {
         console.log(err);
       } else {
-        console.log(Auth.getAuth().uid);
         this.history.pushState(null, '/main');
       }
     }.bind(this));

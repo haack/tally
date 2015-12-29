@@ -31,12 +31,11 @@ $ gulp
 1. Poll post throttling
 
 1. Basic dashboard
-1. Login page
 
 1. Poll add client validation
 1. Poll add firebase rules
 
-1. Add FB auth id to vote
+1. Record user auth on login
 1. Firbase auth validation
 
 1. HTML5 location API integration
