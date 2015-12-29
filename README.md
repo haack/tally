@@ -35,8 +35,8 @@ $ gulp
 1. Poll add client validation
 1. Poll add firebase rules
 
-1. Record user auth on login
-1. Firbase auth validation
+1. Write register function for user
+1. Update user's last logged in on login
 
 1. HTML5 location API integration
 
@@ -46,5 +46,3 @@ $ gulp
 # Issues
 
 1. Firebase feed ref being readded each time component is mounted
-
-1. "Can only update a mounted or mounting component" on redirect if not logged in
