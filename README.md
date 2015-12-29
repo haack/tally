@@ -22,6 +22,8 @@ $ gulp
 
 1. Version API
 
+1. Cleaner login checks for each page (wrap componentWillMountCheck into function?)
+
 1. Finalise app structure (routes)
 
 1. Basic component styling
@@ -43,5 +45,7 @@ $ gulp
 1. Pagination
 
 # Issues
+
+1. Firebase feed ref being readded each time component is mounted
 
 1. "Can only update a mounted or mounting component" on redirect if not logged in

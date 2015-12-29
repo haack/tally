@@ -10,7 +10,7 @@ var Poll = React.createClass({
     //TODO: check if hasn't already voted    
     //TODO: check if a vote needs to be removed from another option
 
-    pollRef.child("votes/exampleuser").set({
+    pollRef.child("votes/" + Auth.getAuth().uid).set({
       timestamp: Date.now(),
       location: "lorem"
     });

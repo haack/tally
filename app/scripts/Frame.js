@@ -8,7 +8,8 @@ var Frame = React.createClass({
         <a href="#/login">Login</a>&nbsp;
         <a href="#/main">Main</a>&nbsp;
         <a href="#/add">Add</a>&nbsp;
-        <a href="#/dashboard">Dashboard</a>
+        <a href="#/dashboard">Dashboard</a>&nbsp;
+        <a href="#/logout">Logout</a>
         <hr />
         {this.props.children}
       </div>

@@ -14,12 +14,12 @@ var Feed = React.createClass({
   },
 
   componentWillMount: function() {
-      firebaseRef.on("value", function(dataSnapshot) {
-        this.setState({
-          list: dataSnapshot.val().list,
-          count: dataSnapshot.val().count
-        });
-      }.bind(this));
+    firebaseRef.on("value", function(dataSnapshot) {
+      this.setState({
+        list: dataSnapshot.val().list,
+        count: dataSnapshot.val().count
+      });
+    }.bind(this));
   },
 
   render: function() {
@@ -31,6 +31,10 @@ var Feed = React.createClass({
     } else {
       return <span>Loading polls...</span>
     }
+  },
+
+  componentWillUnmount: function() {
+    firebaseRef.off();
   }
 });
 
