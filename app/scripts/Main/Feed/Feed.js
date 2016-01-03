@@ -4,7 +4,7 @@ var _ = require('lodash'),
   Poll = require('./Poll'),
   Loading = require('./Loading');
 
-var firebaseRef = new Firebase("https://rapidly.firebaseio.com/polls");
+var firebaseRef = new Firebase(FirebaseURL + "/polls");
 
 var Feed = React.createClass({
   getInitialState: function() {

@@ -1,5 +1,5 @@
 var auth = {
-  ref: new Firebase("https://rapidly.firebaseio.com"),
+  ref: new Firebase(FirebaseURL),
 
   login: function(callback) {
     this.ref.authWithOAuthPopup("facebook", function(error, authData) {
