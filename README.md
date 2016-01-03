@@ -17,23 +17,27 @@ $ gulp watch
 ### Deploy stuff
 ```
 $ gulp
+$ firebase deploy
+$ firebase open
 ```
 
 # Todo
 
-1. Version API
+## Current
 
-1. Poll loading gif
+1. **Show poll results on vote**
+1. Basic dashboard
+1. **Remove denormalised counts** (firebase does it for you)
+1. Welcome page on first login
+1. Feed tabs
 
-1. Show poll results
+## Backlog
 
 1. Cleaner login checks for each page (wrap componentWillMountCheck into function?)
 
 1. Finalise app structure (routes)
 
 1. Poll post throttling
-
-1. Basic dashboard
 
 1. Poll add client validation
 1. Poll add firebase rules
@@ -48,7 +52,7 @@ $ gulp
 1. Feed ordering
 1. Pagination
 
-# Issues
+## Issues
 
 1. Firebase feed ref being readded each time component is mounted
 1. Adding poll updates unmounted Feed
