@@ -18,7 +18,7 @@ var Feed = React.createClass({
     firebaseRef.on("value", function(dataSnapshot) {
       this.setState({
         list: dataSnapshot.val().list,
-        count: dataSnapshot.val().count
+        count: dataSnapshot.child("list").numChildren()
       });
     }.bind(this));
 

@@ -10,6 +10,7 @@ body {
 .login {
   font-size: 3em;
   font-weight: 300;
+  padding: 100px;
 }
 
 .content {
