@@ -37,14 +37,7 @@ var Poll = React.createClass({
   getInitialState: function() {
     return {};
   },
-
-  //catch changes to number of votes to allow change to total
-  componentWillReceiveProps: function(nextProps) {
-    // this.setState({
-    //   totalVotes: this.getTotalVotes(nextProps.data.options)
-    // });
-  },
-
+  
   //needed as the above funciton isn't called on initial prop values
   componentWillMount: function() {
     this.props.pollRef.on("value", function(data) {
@@ -52,17 +45,7 @@ var Poll = React.createClass({
         data: data.val()        
       });
     }.bind(this));
-
-    // this.setState({
-    //   totalVotes: this.getTotalVotes(this.props.data.options)
-    // });
   },
-
-  // getTotalVotes: function(options) {
-  //   return _.sum(options, function(option) {
-  //     return option.count;
-  //   });
-  // },
 
   render: function() {
     return (
