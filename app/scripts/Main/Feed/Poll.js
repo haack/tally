@@ -35,37 +35,41 @@ var Poll = React.createClass({
   },
 
   getInitialState: function() {
-    return {
-      totalVotes: 0
-    };
+    return {};
   },
 
   //catch changes to number of votes to allow change to total
   componentWillReceiveProps: function(nextProps) {
-    this.setState({
-      totalVotes: this.getTotalVotes(nextProps.data.options)
-    });
+    // this.setState({
+    //   totalVotes: this.getTotalVotes(nextProps.data.options)
+    // });
   },
 
   //needed as the above funciton isn't called on initial prop values
   componentWillMount: function() {
-    this.setState({
-      totalVotes: this.getTotalVotes(this.props.data.options)
-    });
+    this.props.pollRef.on("value", function(data) {
+      this.setState({
+        data: data.val()        
+      });
+    }.bind(this));
+
+    // this.setState({
+    //   totalVotes: this.getTotalVotes(this.props.data.options)
+    // });
   },
 
-  getTotalVotes: function(options) {
-    return _.sum(options, function(option) {
-      return option.count;
-    });
-  },
+  // getTotalVotes: function(options) {
+  //   return _.sum(options, function(option) {
+  //     return option.count;
+  //   });
+  // },
 
   render: function() {
     return (
       <div className="poll">
-        <span className="question">{this.props.data.question}</span> 
-        <span className="votes pull-right">{this.props.data.votes}</span>
-        <AnswerOptions vote={this.vote} options={this.props.data.options}/>
+        <span className="question">{this.state.data.question}</span> 
+        <span className="votes pull-right">{this.state.data.votes}</span>
+        <AnswerOptions vote={this.vote} options={this.state.data.options}/>
       </div>
     );
   }

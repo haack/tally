@@ -9,34 +9,42 @@ var firebaseRef = new Firebase(FirebaseURL + "/polls");
 var Feed = React.createClass({
   getInitialState: function() {
     return {
-      list: {},
-      count: 0
+      polls: [],
+      count: 1
     };
   },
 
   componentWillMount: function() {
-    firebaseRef.on("value", function(dataSnapshot) {
+    // firebaseRef.on("value", function(dataSnapshot) {
+    //   this.setState({
+    //     poll: dataSnapshot.val(),
+    //     count: dataSnapshot.numChildren()
+    //   });
+    // }.bind(this));
+
+    firebaseRef.orderByChild("votes").on("child_added", function(data) {
+      this.state.polls.unshift(data.key()) //push to bottom
       this.setState({
-        list: dataSnapshot.val(),
-        count: dataSnapshot.numChildren()
+        polls: this.state.polls
       });
     }.bind(this));
 
     // firebaseRef.orderByChild("votes").on("child_added", function(snapshot) {
     //   console.log(snapshot.key() + " was " + snapshot.val().votes + " meters tall");
     //   this.setState({
-    //     list: _.assign(this.state.list, {[snapshot.key()]: snapshot.val()}),
+    //     polls: _.assign(this.state.polls, {[snapshot.key()]: snapshot.val()}),
     //     count: this.state.count+1
     //   });
     // }.bind(this));
   },
 
   render: function() {
-    var createPoll = function(pollObject, i) {
-      return <Poll key={i} data={pollObject} pollRef={firebaseRef.child(i)} />;
+    var createPoll = function(i) {
+      console.log(i);
+      return <Poll key={i} pollRef={firebaseRef.child(i)} />;
     };
     if (this.state.count > 0) {
-      return <div>{_.map(this.state.list, function(value, key) {return createPoll(value, key)})} Poll count: {this.state.count}</div>;
+      return <div>{_.map(this.state.polls, function(key) {return createPoll(key)})}</div>;
     } else {
       return <Loading />
     }
