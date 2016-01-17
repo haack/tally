@@ -17,12 +17,12 @@ var Feed = React.createClass({
   componentWillMount: function() {
     firebaseRef.on("value", function(dataSnapshot) {
       this.setState({
-        list: dataSnapshot.val().list,
-        count: dataSnapshot.child("list").numChildren()
+        list: dataSnapshot.val(),
+        count: dataSnapshot.numChildren()
       });
     }.bind(this));
 
-    // firebaseRef.child("list").orderByChild("votes").on("child_added", function(snapshot) {
+    // firebaseRef.orderByChild("votes").on("child_added", function(snapshot) {
     //   console.log(snapshot.key() + " was " + snapshot.val().votes + " meters tall");
     //   this.setState({
     //     list: _.assign(this.state.list, {[snapshot.key()]: snapshot.val()}),
@@ -33,7 +33,7 @@ var Feed = React.createClass({
 
   render: function() {
     var createPoll = function(pollObject, i) {
-      return <Poll key={i} data={pollObject} pollRef={firebaseRef.child("list/"+i)} />;
+      return <Poll key={i} data={pollObject} pollRef={firebaseRef.child(i)} />;
     };
     if (this.state.count > 0) {
       return <div>{_.map(this.state.list, function(value, key) {return createPoll(value, key)})} Poll count: {this.state.count}</div>;

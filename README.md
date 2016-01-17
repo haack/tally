@@ -25,9 +25,10 @@ $ firebase open
 
 ## Current
 
-1. **Show poll results on vote**
+1. **Rewrite feed data hooks**
+1. Show poll results on vote
 1. Basic dashboard
-1. **Remove denormalised counts** (firebase does it for you)
+1. Remove denormalised counts (firebase does it for you?)
 1. Welcome page on first login
 1. Feed tabs
 
