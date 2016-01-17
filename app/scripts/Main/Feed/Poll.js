@@ -37,14 +37,20 @@ var Poll = React.createClass({
   getInitialState: function() {
     return {};
   },
-  
-  //needed as the above funciton isn't called on initial prop values
+
+  attachListener: function(data) {
+    this.setState({
+      data: data.val()        
+    });
+  },
+
   componentWillMount: function() {
-    this.props.pollRef.on("value", function(data) {
-      this.setState({
-        data: data.val()        
-      });
-    }.bind(this));
+    this.props.pollRef.on("value", this.attachListener);
+  },
+
+  componentWillUnmount: function() {
+    console.log("Unmounting");
+    this.props.pollRef.off("value", this.attachListener);
   },
 
   render: function() {
