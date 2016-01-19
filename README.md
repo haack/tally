@@ -25,6 +25,7 @@ $ firebase open
 
 ## Current
 
+1. Add indexes to firebase
 1. **Rewrite feed data hooks**
 1. Show poll results on vote
 1. Basic dashboard
