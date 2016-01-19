@@ -1,7 +1,8 @@
 'use strict';
 
 var _ = require("lodash"),
-  AnswerOptions = require("./AnswerOptions");
+    moment = require("moment"),
+    AnswerOptions = require("./AnswerOptions");
 
 var Poll = React.createClass({
   vote: function(option) {
@@ -44,6 +45,10 @@ var Poll = React.createClass({
     });
   },
 
+  getPollDateDisplay: function(ms) {
+    return moment(ms).fromNow();//.duration().humanize();
+  },
+
   componentWillMount: function() {
     this.props.pollRef.on("value", this.attachListener);
   },
@@ -57,8 +62,8 @@ var Poll = React.createClass({
     return (
       <div className="poll">
         <span className="question">{this.state.data.question}</span>
-        <span className="date">{this.state.data.created_at}</span>
         <span className="votes pull-right">{this.state.data.votes}</span>
+        <span className="date pull-right"> {this.getPollDateDisplay(this.state.data.created_at)}&nbsp;&nbsp;&nbsp;</span>
         <AnswerOptions vote={this.vote} options={this.state.data.options}/>
       </div>
     );
