@@ -10,12 +10,13 @@ var Feed = React.createClass({
   getInitialState: function() {
     return {
       polls: [],
-      count: 1
+      count: 1,
+      orderBy: "votes"
     };
   },
 
   componentWillMount: function() {
-    firebaseRef.orderByChild("votes").on("child_added", function(data) {
+    firebaseRef.orderByChild(this.state.orderBy).on("child_added", function(data) {
       this.state.polls.unshift(data.key()) //push to bottom
       this.setState({
         polls: this.state.polls

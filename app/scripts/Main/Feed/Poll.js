@@ -7,6 +7,7 @@ var _ = require("lodash"),
 var Poll = React.createClass({
   vote: function(option) {
     var pollRef = this.props.pollRef.child("options/" + option);
+    var refreshListener;
     
     //TODO: check if hasn't already voted    
     //TODO: check if a vote needs to be removed from another option
@@ -54,8 +55,16 @@ var Poll = React.createClass({
   },
 
   componentWillUnmount: function() {
-    console.log("Unmounting");
     this.props.pollRef.off("value", this.attachListener);
+    window.clearInterval(this.refreshListener);
+  },
+
+  componentRefresh: function() {
+    this.setState({});
+  },
+
+  componentDidMount: function() {
+    this.refreshListener = setInterval(this.componentRefresh, 60000);
   },
 
   render: function() {
