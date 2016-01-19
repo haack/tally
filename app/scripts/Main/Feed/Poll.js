@@ -56,7 +56,8 @@ var Poll = React.createClass({
   render: function() {
     return (
       <div className="poll">
-        <span className="question">{this.state.data.question}</span> 
+        <span className="question">{this.state.data.question}</span>
+        <span className="date">{this.state.data.created_at}</span>
         <span className="votes pull-right">{this.state.data.votes}</span>
         <AnswerOptions vote={this.vote} options={this.state.data.options}/>
       </div>
