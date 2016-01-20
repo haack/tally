@@ -1,5 +1,5 @@
 # React-sandbox
-Single page polling app, using React.js and Firebase
+Single page (kind of) polling app, using React.js and Firebase
 
 ## 1. Install
 
