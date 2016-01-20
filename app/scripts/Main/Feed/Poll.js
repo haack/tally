@@ -38,11 +38,13 @@ var Poll = React.createClass({
           return count+1;
         }
       });
+
+      
     }
   },
 
   hasVoted: function() {
-    return true;
+    return false;
   },
 
   getInitialState: function() {
