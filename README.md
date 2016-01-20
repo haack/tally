@@ -30,7 +30,7 @@ $ firebase open
 1. Basic dashboard
 1. Remove denormalised counts (firebase does it for you?)
 1. Welcome page on first login
-1. Feed tabs
+1. Make feed tab look respectable
 
 ## Backlog
 

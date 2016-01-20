@@ -38,6 +38,8 @@ var Feed = React.createClass({
     firebaseRef.off();
   },
 
+  //TODO: decallbackify if want to allow reattaching firebase 
+  //before clear feed is drawn
   clearFeed: function(cb) {
     this.setState({
       polls: [],

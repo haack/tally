@@ -2,6 +2,7 @@
   "name": "tally",
   "version": "0.0.0",
   "dependencies": {
+    "classnames": "^2.2.3",
     "connect-history-api-fallback": "^1.1.0",
     "history": "^1.17.0",
     "lodash": "^3.10.1",

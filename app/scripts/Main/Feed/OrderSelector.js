@@ -4,9 +4,9 @@ var _ = require('lodash');
 
 var Orderer = React.createClass({
   OrderOptions: {
-    "recent": "created_at",
-    "popularity": "votes",
-    "hot": "freshness"
+    "Recent": "created_at",
+    "Popular": "votes",
+    "Hot": "freshness"
   },
 
   render: function() {
