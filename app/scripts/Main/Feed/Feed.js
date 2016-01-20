@@ -66,7 +66,7 @@ var Feed = React.createClass({
 
   render: function() {
     var createPoll = function(i) {
-      return <Poll key={i} pollRef={firebaseRef.child(i)} />;
+      return <Poll key={i} id={i} pollRef={firebaseRef.child(i)} />;
     };
     if (this.state.count > 0) {
       return <div>

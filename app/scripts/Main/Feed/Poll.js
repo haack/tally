@@ -8,8 +8,14 @@ var _ = require("lodash"),
     AnswerOptions = require("./AnswerOptions");
 
 var Poll = React.createClass({
+  getInitialState: function() {
+    return {
+      hasVoted: true
+    }
+  },
+
   vote: function(option) {
-    if (!this.hasVoted()) {
+    if (!this.state.hasVoted) {
       var pollRef = this.props.pollRef.child("options/" + option);
       var refreshListener;
       
@@ -39,12 +45,13 @@ var Poll = React.createClass({
         }
       });
 
-      
-    }
-  },
+      //record vote under user
+      window.Auth.getUserRef().child("polls_voted").update({[this.props.id]: Date.now()});
 
-  hasVoted: function() {
-    return false;
+      this.setState({
+        hasVoted: true
+      });
+    }
   },
 
   getInitialState: function() {
@@ -63,7 +70,17 @@ var Poll = React.createClass({
 
   componentWillMount: function() {
     this.props.pollRef.on("value", this.attachListener);
+
+    window.Auth.getUserRef().child("polls_voted/"+this.props.id).once("value", this.fetchHasVoted;
   },
+
+  fetchHasVoted: function(data) {
+    if (data.val()) {
+      this.setState({
+        hasVoted: true
+      });
+    }
+  }
 
   componentWillUnmount: function() {
     this.props.pollRef.off("value", this.attachListener);
@@ -81,7 +98,7 @@ var Poll = React.createClass({
   render: function() {
     var classes = classNames({
       'poll': true,
-      'voted': this.hasVoted()
+      'voted': this.state.hasVoted
     });
 
     return (

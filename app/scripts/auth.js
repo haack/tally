@@ -4,7 +4,7 @@ var auth = {
   login: function(callback) {
     this.ref.authWithOAuthPopup("facebook", function(error, authData) {
       if (!error) {
-        this.ref.child(this.getUserUrl()).set(authData);
+        this.getUserRef().set(authData);
       }
 
       callback(error, authData);
@@ -19,8 +19,8 @@ var auth = {
     return this.ref.getAuth();
   },
 
-  getUserUrl: function() {
-    return "users/" + this.getAuth().uid;
+  getUserRef: function() {
+    return this.ref.child("users/" + this.getAuth().uid);
   }
 }
 
