@@ -38,19 +38,20 @@ var Feed = React.createClass({
     firebaseRef.off();
   },
 
-  clearFeed: function() {
-    this.state.polls = [];
-    this.state.count = 0;
+  clearFeed: function(cb) {
     this.setState({
-      polls: this.state.polls,
-      count: this.state.count
-    });
+      polls: [],
+      count: 0
+    }, function() {
+      cb()
+    }.bind(this));
   },
 
   refreshFeed: function() {
     this.detachFirebase();
-    this.clearFeed();
-    this.attachFirebase();
+    this.clearFeed(function() {
+      this.attachFirebase();  
+    }.bind(this));
   },
 
   componentWillMount: function() {
