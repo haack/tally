@@ -1,5 +1,7 @@
 'use strict';
 
+//TODO: Create date display component and move refresh code to there
+
 var _ = require("lodash"),
     moment = require("moment"),
     AnswerOptions = require("./AnswerOptions");

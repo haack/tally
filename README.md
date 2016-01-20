@@ -26,7 +26,6 @@ $ firebase open
 ## Current
 
 1. Add indexes to firebase
-1. **Rewrite feed data hooks**
 1. Show poll results on vote
 1. Basic dashboard
 1. Remove denormalised counts (firebase does it for you?)
@@ -36,6 +35,8 @@ $ firebase open
 ## Backlog
 
 1. Cleaner login checks for each page (wrap componentWillMountCheck into function?)
+
+1. Move poll date code (and refresh) into component
 
 1. Finalise app structure (routes)
 
