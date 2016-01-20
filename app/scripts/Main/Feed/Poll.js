@@ -54,10 +54,6 @@ var Poll = React.createClass({
     }
   },
 
-  getInitialState: function() {
-    return {};
-  },
-
   attachListener: function(data) {
     this.setState({
       data: data.val()        
@@ -71,16 +67,16 @@ var Poll = React.createClass({
   componentWillMount: function() {
     this.props.pollRef.on("value", this.attachListener);
 
-    window.Auth.getUserRef().child("polls_voted/"+this.props.id).once("value", this.fetchHasVoted;
+    window.Auth.getUserRef().child("polls_voted/"+this.props.id).once("value", this.fetchHasVoted);
   },
 
   fetchHasVoted: function(data) {
-    if (data.val()) {
+    if (!data.val()) {
       this.setState({
-        hasVoted: true
+        hasVoted: false
       });
     }
-  }
+  },
 
   componentWillUnmount: function() {
     this.props.pollRef.off("value", this.attachListener);

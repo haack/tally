@@ -60,3 +60,7 @@ body {
 .option-result a {
   height: 100%;
 }
+
+.voted {
+  background-color: #CFD0C1;
+}
