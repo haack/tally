@@ -4,6 +4,8 @@ Single page (kind of) polling app, using React.js and Firebase
 ## 1. Install
 
 ```bash
+$ npm install -g gulp 
+$ npm install -g firebase-tools
 $ npm install
 ```
 
