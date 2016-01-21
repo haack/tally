@@ -1,6 +1,6 @@
 var Feed = require("./Feed/Feed"),
     AddButton = require("./AddButton"),
-  Loading = require('./Loading'),
+    Loading = require('./Loading'),
     History = require("react-router").History;
 
 //abstracted to allow stuff above feed for customising
