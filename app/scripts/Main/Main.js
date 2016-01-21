@@ -1,4 +1,5 @@
 var Feed = require("./Feed/Feed"),
+    AddButton = require("./AddButton"),
     History = require("react-router").History;
 
 //abstracted to allow stuff above feed for customising
@@ -15,8 +16,9 @@ var Main = React.createClass({
 
   render: function() {
     return (
-      <div>
-        <Feed/>
+      <div className="main">
+        <Feed />
+        <AddButton/>
       </div>
     );
   }

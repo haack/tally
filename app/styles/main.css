@@ -21,6 +21,23 @@ body {
   margin-top: 70px;
 }
 
+.main {
+  padding-bottom: 70px;
+}
+
+.add-button {
+  position: fixed;
+  bottom: 0;
+  height: 30px;
+  background-color: #6CC72C;
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  color: #47473D;
+  font-size: 20px;
+}
+
 .poll {
   padding: 20px 20px;
   border-bottom: 1px #aaa solid;
