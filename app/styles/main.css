@@ -28,10 +28,12 @@ body {
 
 .add-button {
   position: fixed;
+  left: 0;
+  right: 0;
   bottom: 0;
   height: 30px;
   background-color: #22DDDE;
-  width: 100%;
+  /*width: 100%;*/
   text-align: center;
   padding-top: 10px;
   padding-bottom: 55px;

@@ -5,7 +5,7 @@ var Loading = React.createClass({
     return (
       <div className="text-center loading"><img src="images/loading.gif"></img></div>
     );
-  },
+  }
 });
 
 module.exports = Loading;
