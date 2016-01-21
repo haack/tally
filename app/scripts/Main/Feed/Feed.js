@@ -1,8 +1,8 @@
 'use strict';
 
 var _ = require('lodash'),
-  Poll = require('./Poll'),
-  OrderSelector = require('./OrderSelector');
+    Poll = require('./Poll'),
+    OrderSelector = require('./OrderSelector');
 
 var firebaseRef = new Firebase(FirebaseURL + "/polls");
 

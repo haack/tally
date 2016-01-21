@@ -40,6 +40,10 @@ body {
   border-top: 2px solid #7AF5F5;
 }
 
+.add-button .icon {
+  margin-top: -5px;
+}
+
 .poll {
   padding: 20px 20px;
   border-bottom: 3px #75715F solid;
