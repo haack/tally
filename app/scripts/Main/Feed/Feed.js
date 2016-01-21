@@ -2,8 +2,7 @@
 
 var _ = require('lodash'),
   Poll = require('./Poll'),
-  OrderSelector = require('./OrderSelector'),
-  Loading = require('./Loading');
+  OrderSelector = require('./OrderSelector');
 
 var firebaseRef = new Firebase(FirebaseURL + "/polls");
 
@@ -68,14 +67,10 @@ var Feed = React.createClass({
     var createPoll = function(i) {
       return <Poll key={i} id={i} pollRef={firebaseRef.child(i)} />;
     };
-    if (this.state.count > 0) {
-      return <div>
-        <OrderSelector onSelect={this.changeOrderBy}/>
-        {_.map(this.state.polls, function(key) {return createPoll(key)})}
-        </div>;
-    } else {
-      return <Loading />
-    }
+    return <div>
+      <OrderSelector onSelect={this.changeOrderBy}/>
+      {_.map(this.state.polls, function(key) {return createPoll(key)})}
+    </div>;
   }
 });
 

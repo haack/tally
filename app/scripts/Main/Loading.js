@@ -3,7 +3,7 @@
 var Loading = React.createClass({
   render: function() {
     return (
-      <div className="text-center loading"><img src="images/loading.gif" size="100px"></img></div>
+      <div className="text-center loading"><img src="images/loading.gif"></img></div>
     );
   },
 });

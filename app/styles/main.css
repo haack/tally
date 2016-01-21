@@ -18,11 +18,12 @@ body {
 }
 
 .loading {
-  margin-top: 70px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .main {
-  padding-bottom: 67px;
+  padding-bottom: 66px;
 }
 
 .add-button {
@@ -42,7 +43,7 @@ body {
 
 .poll {
   padding: 20px 20px;
-  border-bottom: 1px #aaa solid;
+  border-bottom: 3px #75715F solid;
 }
 
 .poll .question {
@@ -72,7 +73,7 @@ body {
   display: inline-block;
   height: 20px;
   margin-right: 10px;
-  border: 1px #aaa solid;
+  border: 1px #242621 solid;
   height: 100%;
 }
 
@@ -81,5 +82,5 @@ body {
 }
 
 .voted {
-  background-color: #CFD0C1;
+  background-color: #DEDEDE;
 }

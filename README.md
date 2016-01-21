@@ -55,6 +55,9 @@ $ firebase open
 1. Feed ordering
 1. Pagination
 
+1. Loading gif
+1. Paginate results
+
 ## Issues
 
 1. Firebase feed ref being readded each time component is mounted
