@@ -22,20 +22,22 @@ body {
 }
 
 .main {
-  padding-bottom: 70px;
+  padding-bottom: 67px;
 }
 
 .add-button {
   position: fixed;
   bottom: 0;
   height: 30px;
-  background-color: #6CC72C;
+  background-color: #22DDDE;
   width: 100%;
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 50px;
+  padding-top: 10px;
+  padding-bottom: 55px;
   color: #47473D;
-  font-size: 20px;
+  font-size: 30px;
+  font-weight: 300;
+  border-top: 2px solid #7AF5F5;
 }
 
 .poll {
