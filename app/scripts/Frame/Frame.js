@@ -10,7 +10,7 @@ var Frame = React.createClass({
           <Navbar />
         </div>
         <div className="row">
-          <div className="content col-md-6 col-md-offset-3"> 
+          <div className="content col-lg-6 col-lg-offset-3"> 
             {this.props.children}
           </div>
         </div>
