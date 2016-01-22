@@ -1,5 +1,8 @@
 'use strict';
 
+//Note: 
+//the left icon is literally to keep the title centered ha
+
 var Navbar = React.createClass({
   render: function() {
     return (
