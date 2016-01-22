@@ -14,9 +14,19 @@ body {
   border-bottom: 3px solid #22DDDE;
 }
 
-.nav-options {
+.nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav .dropdown ul {
+  font-size: 20px;
+}
+
+.nav-icon {
   padding-top: 10px;
   padding-right: 10px;
+  padding-left: 10px;
 }
 
 .order-selector {
