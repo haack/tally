@@ -14,6 +14,11 @@ body {
   border-bottom: 3px solid #22DDDE;
 }
 
+.nav-options {
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
 .order-selector {
   border-bottom: 2px solid #7AF5F5;
   padding: 0;
@@ -76,9 +81,14 @@ body {
   margin-top: -5px;
 }
 
+.poll-list {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
 .poll {
   padding: 20px 20px;
-  border-bottom: 3px #75715F solid;
+  border-bottom: 1px #75715F solid;
 }
 
 .poll .question {

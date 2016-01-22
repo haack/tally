@@ -69,7 +69,9 @@ var Feed = React.createClass({
     };
     return <div>
       <OrderSelector onSelect={this.changeOrderBy}/>
-      {_.map(this.state.polls, function(key) {return createPoll(key)})}
+      <div>
+        {_.map(this.state.polls, function(key) {return createPoll(key)})}
+      </div>
     </div>;
   }
 });

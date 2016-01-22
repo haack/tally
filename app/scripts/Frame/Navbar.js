@@ -4,7 +4,8 @@ var Navbar = React.createClass({
   render: function() {
     return (
       <div className="nav">
-        Tally
+        <span>Tally</span>
+        <i className="nav-options fa fa-ellipsis-h pull-right"></i>
       </div>
     );
   },
