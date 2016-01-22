@@ -11,7 +11,8 @@ var Route = ReactRouter.Route;
 
 module.exports = (
   <Router>
-    <Route path="/" component={Frame}>
+    <Route component={Frame}>
+      <Route path="/" component={Main} />
       <Route path="/login" component={Login} />
       <Route path="/main" component={Main} />
       <Route path="/add" component={Add} />
