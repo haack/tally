@@ -20,9 +20,9 @@ var Orderer = React.createClass({
 
   render: function() {
     return (
-      <div className="order-selector container">
+      <div className="row order-selector">
         {_.map(this.OrderOptions, function(val, key) {
-          return <span className="order-option col-md-4 col-xs-4" key={val.field} onClick={this.props.onSelect.bind(null, val.field)}><i className={val.icon}></i> {key}</span>
+          return <span className="order-option col-lg-4 col-md-4 col-xs-4 clickable" key={val.field} onClick={this.props.onSelect.bind(null, val.field)}><i className={val.icon}></i> {key}</span>
         }.bind(this))}
       </div>
     );

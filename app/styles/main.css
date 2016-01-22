@@ -21,7 +21,12 @@ body {
 
 .order-selector {
   border-bottom: 2px solid #7AF5F5;
-  padding: 0;
+  margin: 0px 20px;
+}
+
+.clickable {
+  cursor: pointer; 
+  cursor: hand;
 }
 
 .order-option {

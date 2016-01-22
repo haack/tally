@@ -5,7 +5,7 @@ var Navbar = React.createClass({
     return (
       <div className="nav">
         <span>Tally</span>
-        <i className="nav-options fa fa-ellipsis-h pull-right"></i>
+        <i className="nav-options fa fa-chevron-circle-down pull-right"></i>
       </div>
     );
   },
