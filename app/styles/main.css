@@ -3,8 +3,19 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.navbar {
+.nav {
   margin-bottom: 0;
+  background-color: #FFF;
+  color: #116f6f;
+  text-align: center;
+  font-size: 30px;
+  padding: 10px;
+  font-weight: 300;
+  border-bottom: 2px solid #22DDDE;
+}
+
+.order-option {
+  text-align: center;
 }
 
 .login {
@@ -28,12 +39,11 @@ body {
 
 .add-button {
   position: fixed;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
   height: 30px;
-  background-color: #22DDDE;
-  /*width: 100%;*/
+  background-color: #fff;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 55px;
