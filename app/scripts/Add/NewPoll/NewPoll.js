@@ -12,8 +12,8 @@ var NewPoll = React.createClass({
       step: 1,
       formData: {
         options: {
-          "yes": "yes",
-          "no": "no"
+          "Yes": "Yes",
+          "No": "No"
         }
       }
     };
@@ -30,9 +30,11 @@ var NewPoll = React.createClass({
   },
 
   prevStep: function() {
-    this.setState({
-      step : this.state.step - 1
-    })
+    if (this.state.step > 1) {
+      this.setState({
+        step : this.state.step - 1
+      })
+    }
   },
 
   saveValues: function(data) {

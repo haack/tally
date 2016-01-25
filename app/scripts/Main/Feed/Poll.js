@@ -10,7 +10,8 @@ var _ = require("lodash"),
 var Poll = React.createClass({
   getInitialState: function() {
     return {
-      hasVoted: true
+      hasVoted: true,
+      votedOption: "Loading..."
     }
   },
 
@@ -46,10 +47,18 @@ var Poll = React.createClass({
       });
 
       //record vote under user
-      window.Auth.getUserRef().child("polls_voted").update({[this.props.id]: Date.now()});
+      window.Auth.getUserRef().child("polls_voted").update(
+        {
+          [this.props.id]: {
+            "time": Date.now(),
+            "option": option
+          }
+        }
+      );
 
       this.setState({
-        hasVoted: true
+        hasVoted: true,
+        votedOption: option
       });
     }
   },
@@ -71,9 +80,14 @@ var Poll = React.createClass({
   },
 
   fetchHasVoted: function(data) {
+    console.log(data.val());
     if (!data.val()) {
       this.setState({
         hasVoted: false
+      });
+    } else {
+      this.setState({
+        votedOption: data.val().option
       });
     }
   },
@@ -96,13 +110,24 @@ var Poll = React.createClass({
       'poll': true,
       'voted': this.state.hasVoted
     });
-
     return (
       <div className={classes}>
-        <span className="question">{this.state.data.question}</span>
-        <span className="votes pull-right">{this.state.data.votes}</span>
-        <span className="date pull-right"> {this.getPollDateDisplay(this.state.data.created_at)}&nbsp;&nbsp;&nbsp;</span>
-        <AnswerOptions vote={this.vote} options={this.state.data.options}/>
+        <div className="poll-left">
+          <div className="poll-index">
+            #{this.props.index+1}
+          </div>
+          <div>
+            <div><span className="poll-info">Q. </span><span className="question">{this.state.data.question}</span></div>
+            <div className="poll-answer">
+              <AnswerOptions vote={this.vote} voted={this.state.votedOption} options={this.state.data.options}/>
+            </div>
+            <span className="poll-info"> {this.getPollDateDisplay(this.state.data.created_at)}</span>
+          </div>
+        </div>
+        <div className="poll-right">
+          <div className="poll-votes-label">Votes:</div>
+          <div className="poll-votes-value">{this.state.data.votes}</div>
+        </div>
       </div>
     );
   }

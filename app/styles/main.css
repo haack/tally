@@ -31,8 +31,11 @@ body {
 
 .order-selector {
   border-bottom: 2px solid #7AF5F5;
-  margin: 0px 20px;
+  /*margin: 0px 20px;*/
+  background-color: #fff;
   font-size: 15px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .clickable {
@@ -70,8 +73,8 @@ body {
 }
 
 .loading {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .main {
@@ -98,28 +101,64 @@ body {
 }
 
 .poll-list {
-  padding-left: 50px;
-  padding-right: 50px;
+  height: 100%;
 }
 
 .poll {
+  background-color: #fff;
+  /*margin-bottom: 10px;*/
   padding: 20px 20px;
-  border-bottom: 1px #75715F solid;
+  border-bottom: 1px #f0f0f4 solid;
+  display: flex;
+  justify-content: space-between;
+}
+
+.poll-left {
+  display: flex;
+  flex-direction: row;
+}
+
+.poll-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.poll-index {
+  font-size: 40px;
+  color: #f2f2f2;
+  margin-right: 20px;
+}
+
+.poll-info {
+  font-size: 15px;
+  color: #CFD0C2;
 }
 
 .poll .question {
   padding-top: 3px;
-  font-size: 1.6em;
+  font-size: 18px;
 }
 
-.poll .votes {
+.poll-votes-label {
+  text-align: center;
+  color: #CFD0C2;
+}
+
+.poll-votes-value {
   font-size: 3em;
   font-weight: 300;
-  color: #337ab7;
+  color: #1ec7c7;
+  margin-top: -8px;
+}
+
+.poll-answer {
+  margin-top: 10px;
 }
 
 .answer-options {
   margin-top: 5px;
+  display: inline;
 }
 
 .answer-options ul {
@@ -134,14 +173,48 @@ body {
   display: inline-block;
   height: 20px;
   margin-right: 10px;
-  border: 1px #242621 solid;
+  border: 1px #1ec7c7 solid;
   height: 100%;
+  color: #242621;
+  margin-bottom: 2px;
 }
 
 .option-result a {
   height: 100%;
 }
 
+.input-field {
+  font-weight: 300;
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field .title {
+  font-size: 35px;
+  color: #1ec7c7;
+}
+
+.input-field .btn {
+  background-color: #1ec7c7;
+  border-color: #ccc;
+  color: #fff;
+}
+
+.input-field ol li span {
+  color: #1ec7c7;
+  margin: 2px;
+  font-size: 25px;
+}
+
+.input-field ol li a {
+  color: #1ec7c7;
+}
+
+.add-option {
+  color: #fff;
+}
+
 .voted {
-  background-color: #DEDEDE;
+  /*background-color: #DEDEDE;*/
 }

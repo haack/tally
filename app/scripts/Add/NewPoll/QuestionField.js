@@ -8,12 +8,26 @@ var QuestionField = React.createClass({
     this.props.saveValues({question: event.target.value});
   },
 
+  nextStep: function() {
+    var q = this.props.formData.question;
+    if (q) {
+      if (q.length > 5) {
+        this.props.nextStep();
+      }
+    }
+  },
+
   render: function() {
     return (
-      <div>
-        <button onClick={this.props.prevStep}>Prev</button>
-        <input type="text" placeholder="What do you want to ask?" defaultValue={this.props.formData.question} onChange={this.handleQuestionChange}/>
-        <button onClick={this.props.nextStep}>Next</button>
+      <div className="input-field">
+        <span className="title">Question title</span>
+        <div className="input-group">
+          <input className="form-control input-lg" type="text" placeholder="What do you want to ask?" defaultValue={this.props.formData.question} onChange={this.handleQuestionChange}/>
+          <span className="input-group-btn">
+            <button className="btn btn-primary btn-lg" type="button" onClick={this.nextStep}>Next!</button>
+          </span>
+        </div>
+        <span>*Must be atleast 5 characters</span>
       </div>
     );
   },

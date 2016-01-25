@@ -10,7 +10,7 @@ var AnswerOptions = React.createClass({
         <ul>
           {
             _.map(this.props.options, function(value, key) {
-              return <OptionResult key={key} vote={this.props.vote.bind(null,key)} option={key} data={value}/>;
+              return <OptionResult key={key} voted={this.props.voted} vote={this.props.vote.bind(null,key)} option={key} data={value}/>;
             }.bind(this))
           }
         </ul>

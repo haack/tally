@@ -6,12 +6,8 @@ var Logout = React.createClass({
   mixins: [History],
 
   componentWillMount: function() {
-    //if already not logged in
-    if (!Auth.getAuth()) {
-      this.history.pushState(null, '/login');
-    } else {
-      Auth.logout();
-    }
+    Auth.logout();
+    this.history.pushState(null, '/login');
   },
 
   render: function() {

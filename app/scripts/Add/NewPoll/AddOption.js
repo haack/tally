@@ -10,8 +10,12 @@ var AddOption = React.createClass({
   render: function() {
     return (
       <div>
-        <input type="text" ref="OptionValue" />
-        <button onClick={this.addOption}>+</button>
+        <div className="input-group">
+          <input className="form-control" type="text" ref="OptionValue" placeholder="New option..." />
+          <span className="input-group-btn">
+            <a className="btn add-option" onClick={this.addOption}><i className="fa fa-plus"></i></a>
+          </span>
+        </div>
       </div>
     );
   },

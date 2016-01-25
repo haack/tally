@@ -1,6 +1,5 @@
 var Feed = require("./Feed/Feed"),
     AddButton = require("./AddButton"),
-    Loading = require('./Loading'),
     History = require("react-router").History;
 
 //abstracted to allow stuff above feed for customising
@@ -19,7 +18,6 @@ var Main = React.createClass({
     return (
       <div className="main">
         <Feed />
-        <Loading />
         <AddButton/>
       </div>
     );
