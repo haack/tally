@@ -1,5 +1,5 @@
 # React-sandbox
-Single page real-time polling app, using React.js and Firebase.
+> Single page real-time polling app, using React.js and Firebase.
 
 Yeoman generator used: https://github.com/randylien/generator-react-gulp-browserify
 
@@ -20,7 +20,7 @@ $ gulp watch
 
 ### Deploy stuff
 ```
-$ gulp
+$ gulp build
 $ firebase deploy
 $ firebase open
 ```
