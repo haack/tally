@@ -67,3 +67,5 @@ $ firebase open
 1. Firebase feed ref being readded each time component is mounted
 1. Adding poll updates unmounted Feed
 1. Bootstrap css and js not being imported properly (see yo generator)
+1. Logging in same user on different multiple devices doesn't work
+1. Navigation sometimes requires refresh
