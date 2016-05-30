@@ -9,8 +9,9 @@ var OptionResult = React.createClass({
     }.bind(this);
 
     var voteResults = function() {
-      if (this.props.voted) {
-        return <span>{this.props.data.count}</span>
+      console.log('serach:' + this.props.voted);
+      if (this.props.voted !== 'Loading...') {
+        return <span><span style={{color: '#AAA'}}>|</span> {(this.props.data.count) ? this.props.data.count: 0}</span>
       }
     }.bind(this);
 

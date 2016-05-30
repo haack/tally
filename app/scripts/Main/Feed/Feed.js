@@ -25,7 +25,7 @@ var Feed = React.createClass({
   },
 
   attachFirebase: function() {
-    firebaseRef.orderByChild(this.state.orderBy).on("child_added", function(data) {
+    firebaseRef.orderByChild(this.state.orderBy).limitToLast(30).on("child_added", function(data) {
       this.state.polls.unshift(data.key()) //push to bottom
       this.setState({
         polls: this.state.polls,
@@ -68,14 +68,15 @@ var Feed = React.createClass({
     var createPoll = function(key, index) {
       return <Poll key={key} index={index} id={key} pollRef={firebaseRef.child(key)} />;
     };
-      // <Loading />
-    return <div>
+    return (
+    <div>
       <OrderSelector onSelect={this.changeOrderBy}/>
       <div className="poll-list">
         {_.map(this.state.polls, function(key, index) {return createPoll(key, index)})}
-        
+        <Loading />
       </div>
-    </div>;
+    </div>
+    );
   }
 });
 
