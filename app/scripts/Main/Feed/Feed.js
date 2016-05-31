@@ -25,7 +25,7 @@ var Feed = React.createClass({
   },
 
   attachFirebase: function() {
-    firebaseRef.orderByChild(this.state.orderBy).limitToLast(30).on("child_added", function(data) {
+    firebaseRef.orderByChild(this.state.orderBy).limitToLast(100).on("child_added", function(data) {
       
       this.state.polls.unshift({key: data.key(), data: data.val()}) //push to bottom  
       
