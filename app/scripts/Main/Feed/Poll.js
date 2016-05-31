@@ -105,6 +105,17 @@ var Poll = React.createClass({
     this.refreshListener = setInterval(this.componentRefresh, 60000);
   },
 
+  renderVotes: function() {
+    if (this.state.hasVoted) {
+      return (
+        <div className="poll-right">
+          <div className="poll-votes-label">Votes:</div>
+          <div className="poll-votes-value">{this.state.data.votes}</div>
+        </div>
+      )
+    }
+  },
+
   render: function() {
     var classes = classNames({
       'poll': true,
@@ -124,10 +135,7 @@ var Poll = React.createClass({
             <span className="poll-info"> {this.getPollDateDisplay(this.state.data.created_at)}</span>
           </div>
         </div>
-        <div className="poll-right">
-          <div className="poll-votes-label">Votes:</div>
-          <div className="poll-votes-value">{this.state.data.votes}</div>
-        </div>
+        {this.renderVotes()}
       </div>
     );
   }
