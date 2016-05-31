@@ -20,18 +20,49 @@ var Feed = React.createClass({
     this.setState({
       orderBy: filter
     }, function() {
-      this.refreshFeed();  
+      this.refreshFeed();
     }.bind(this));
   },
 
   attachFirebase: function() {
     firebaseRef.orderByChild(this.state.orderBy).limitToLast(30).on("child_added", function(data) {
-      this.state.polls.unshift(data.key()) //push to bottom
+      
+      this.state.polls.unshift({key: data.key(), data: data.val()}) //push to bottom  
+      
+      if (this.state.orderBy === 'hot') {
+        this.hotSort(this.state.polls);
+      }
+
       this.setState({
         polls: this.state.polls,
         count: this.state.count+1
       });
     }.bind(this));
+  },
+
+
+  // Score = (P-1) / (T+2)^G
+  // where,
+  // P = points of an item (and -1 is to negate submitters vote)
+  // T = time since submission (in hours)
+  // G = Gravity, defaults to 1.8 in news.arc
+  getHotScore: function(P, T, G=1.8) {
+    return (P+1) / Math.pow((T + 2), G);
+  },
+
+  getHours: function(ms, now) {
+    return (now - ms) / 36e5;
+  },
+
+  hotSort: function(polls) {
+    let now = Date.now();
+
+    polls.sort((a, b) => {
+      let scoreA = this.getHotScore(a.data.votes, this.getHours(a.data.created_at, now));
+      let scoreB = this.getHotScore(b.data.votes, this.getHours(b.data.created_at, now));
+      console.log(`${a.data.question} : ${scoreA}`)
+      return (scoreA > scoreB) ? -1 : 1;
+    });
   },
 
   detachFirebase: function() {
@@ -72,7 +103,7 @@ var Feed = React.createClass({
     <div>
       <OrderSelector onSelect={this.changeOrderBy}/>
       <div className="poll-list">
-        {_.map(this.state.polls, function(key, index) {return createPoll(key, index)})}
+        {_.map(this.state.polls, function(key, index) {return createPoll(key.key, index)})}
         <Loading />
       </div>
     </div>

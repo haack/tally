@@ -13,7 +13,7 @@ var Orderer = React.createClass({
       "icon": "fa fa-arrow-up"
     },
     "Hot": {
-      "field": "freshness",
+      "field": "hot",
       "icon": "fa fa-fire"
     }
   },
