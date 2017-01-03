@@ -4,6 +4,8 @@
 
 Featured on react.rocks: https://react.rocks/example/Tally
 
+Demo: https://tallyapp.firebaseapp.com/
+
 Yeoman generator used: https://github.com/randylien/generator-react-gulp-browserify
 
 ## 1. Install
