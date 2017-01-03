@@ -1,6 +1,8 @@
-# React-sandbox
+# Tally
 > Single page real-time polling app, using React.js and Firebase.
 [![Code Climate](https://codeclimate.com/github/haack/tallyapp/badges/gpa.svg)](https://codeclimate.com/github/haack/tallyapp)
+
+Featured on react.rocks: https://react.rocks/example/Tally
 
 Yeoman generator used: https://github.com/randylien/generator-react-gulp-browserify
 
